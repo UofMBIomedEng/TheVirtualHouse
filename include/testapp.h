@@ -20,6 +20,8 @@ public:
 	virtual	void	setupmedia();
 	virtual	void	setupgame();
 	virtual	void	play(float gamespeed);
+	virtual void	judgment();
+	virtual int		zone(float px, float py, float pz);
 	virtual	void	drawworld();
 	virtual	void	drawhud();
 

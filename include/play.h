@@ -72,7 +72,7 @@ void TestApp::play(float gamespeed){
 	if(mpKey[FWInput::Channel_Key_H]->getBoolTrue())
 		if(playerhight<6){playerhight+=.1;}else{playerhight=3;}
 
-	for(int gameloops=0; gameloops<2; gameloops++){
+//	for(int gameloops=0; gameloops<2; gameloops++){
 
 	float oldx=playerxpos;
 	float oldy=playerypos;
@@ -111,7 +111,7 @@ void TestApp::play(float gamespeed){
 					entitycount[x][y][z]-=1;
 					e--;
 					collectablesfound++;
-					save();
+					//save();
 					saving=1;
 			}
 		}
@@ -159,8 +159,12 @@ void TestApp::play(float gamespeed){
 		if(camyang>360*radiansindegree)camyang-=360*radiansindegree;
 	}
 
+	//run the judgment engine to analyze the performance of the participant
+	judgment();
+
 	//Log file writer 
-	if(!start_motion)fprintf(pFile,"%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%.2f,%.2f,%.2f\n",playerxpos,playerypos,playerzpos,camxang,camyang,camzang,elapseddist,expectdist,elapsedtime);
+	if(!start_motion)fprintf(pFile,"%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%.2f,%.2f,%1d,%.2f\n",playerxpos,playerypos,playerzpos,camxang,camyang,camzang,elapseddist,expectdist,judge_res,elapsedtime);
+	//here, can add what was wrong and how many times it was wrong, ie floor, wall, side
 	
 	if(playerjumping){
 		if(mpKey[FWInput::Channel_Key_Space]->getBoolValue() && playeryposmov>0.1){
@@ -171,13 +175,13 @@ void TestApp::play(float gamespeed){
 	}
 	if(playergrounded){
 		playerjumping=0;
-		playeryposmov-=0.005*gamespeed;
+		playeryposmov-=0.01*gamespeed;
 		if(testmode&&mpKey[FWInput::Channel_Key_Space]->getBoolValue()){
 			playeryposmov=0.65;
 			playerjumping=1;
 		}
 	}else{
-		playeryposmov-=0.0035*gamespeed;
+		playeryposmov-=0.035*gamespeed;
 	}
 	
 	playerxpos+=playerxposmov*gamespeed;
@@ -232,9 +236,9 @@ void TestApp::play(float gamespeed){
 					}
 				}
 	playerypos-=1.25;
-	//if(playerypos>(float)(oldy+playeryposmov*gamespeed)+0.01){
+	if(playerypos>(float)(oldy+playeryposmov*gamespeed)+0.001){
 		playergrounded=1;
-	//}else	playergrounded=0;	
+	}else	playergrounded=0;	
 	
 	//adjust momentum
 	playerxposmov=(playerxpos-oldx)/gamespeed;
@@ -242,9 +246,9 @@ void TestApp::play(float gamespeed){
 	playerzposmov=(playerzpos-oldz)/gamespeed;
 
 	//adjust momentum
-	playerxposmov-=playerxposmov*0.15*gamespeed;
-	playeryposmov-=playeryposmov*0.004*gamespeed;
-	playerzposmov-=playerzposmov*0.15*gamespeed;
+	playerxposmov-=playerxposmov*0.1*gamespeed;
+	playeryposmov-=playeryposmov*0.04*gamespeed;
+	playerzposmov-=playerzposmov*0.1*gamespeed;
 
 	//animate player
 	if(showplayer){
@@ -272,7 +276,11 @@ void TestApp::play(float gamespeed){
 		float movespeed=dist2d(0,0,playerxposmov,playerzposmov)*0.25;
 		swingtime+=movespeed*5;
 		heightswing=0.02*(cos(swingtime*2));
-		latswing=0.01*sin(swingtime);
+
+		if((playerxpos>164)&&(playerxpos<324)&&(playerzpos>164)&&(playerzpos<324))			//wheelchair wiggling effect of the grass
+			latswing=0;
+		else
+			latswing=0.01*sin(swingtime);
 	}
 	//turn player
 	playeryang=turntoangle(
@@ -301,22 +309,22 @@ void TestApp::play(float gamespeed){
 
 	//Arrow key control
 	if(control_buffer[0][latency_read_pointer]){
-		playerxposmov+=(0.04*cos(-camxang)*cos(camyang-90*radiansindegree));
-		playeryposmov+=(0.04*sin(-camxang));
-		playerzposmov+=(0.04*cos(-camxang)*sin(camyang-90*radiansindegree));
+		playerxposmov+=gamespeed*(0.04*cos(-camxang)*cos(camyang-90*radiansindegree));
+		//playeryposmov+=(0.04*sin(-camxang));
+		playerzposmov+=gamespeed*(0.04*cos(-camxang)*sin(camyang-90*radiansindegree));
 	}
 	
 	if(control_buffer[1][latency_read_pointer]){
-		playerxposmov-=(0.04*cos(-camxang)*cos(camyang-90*radiansindegree));
-		playeryposmov-=(0.04*sin(-camxang));
-		playerzposmov-=(0.04*cos(-camxang)*sin(camyang-90*radiansindegree));
+		playerxposmov-=gamespeed*(0.04*cos(-camxang)*cos(camyang-90*radiansindegree));
+		//playeryposmov-=(0.04*sin(-camxang));
+		playerzposmov-=gamespeed*(0.04*cos(-camxang)*sin(camyang-90*radiansindegree));
 	}
 
 	if(control_buffer[2][latency_read_pointer])
-		if(!start_motion)camyang-=0.01;
+		if(!start_motion)camyang-=gamespeed*0.01;
 
 	if(control_buffer[3][latency_read_pointer])
-		if(!start_motion)camyang+=0.01;
+		if(!start_motion)camyang+=gamespeed*0.01;
 
 	if(countdownjoystickstart) countdownjoystickstart--;
 	if(countdownjoystickstart==2) usejoystick = 1; 
@@ -324,11 +332,11 @@ void TestApp::play(float gamespeed){
 
 		if(joyGetPos(0,&joystick))	usejoystick=0;				//obtain joystick value and check the presence
 		else{
-			if(((float)joystick.wXpos-32768>1500)||((float)joystick.wXpos-32768<-1500)) camyang+=((float)joystick.wXpos-32768)*(0.01/32768)*JoyAngVel;	
+			if(((float)joystick.wXpos-32768>1500)||((float)joystick.wXpos-32768<-1500)) camyang+=((float)joystick.wXpos-32768)*(0.01/32768)*JoyAngVel*0.96*gamespeed;	
 			if((32768-(float)joystick.wYpos>1500)||(32768-(float)joystick.wYpos<-1500)){
 				if(!start_motion){	
-					playerxposmov+=(32768-(float)joystick.wYpos)*(JoyTransVel/32768)*cos(-camxang)*cos(camyang-90*radiansindegree);
-					playerzposmov+=(32768-(float)joystick.wYpos)*(JoyTransVel/32768)*cos(-camxang)*sin(camyang-90*radiansindegree);
+					playerxposmov+=(32768-(float)joystick.wYpos)*(gamespeed*0.58*JoyTransVel/32768)*cos(-camxang)*cos(camyang-90*radiansindegree);
+					playerzposmov+=(32768-(float)joystick.wYpos)*(gamespeed*0.58*JoyTransVel/32768)*cos(-camxang)*sin(camyang-90*radiansindegree);
 					
 				}
 				
@@ -372,10 +380,7 @@ void TestApp::play(float gamespeed){
 
 	//integrate the elapsed distance
 	if(!start_motion){
-		elapseddist+=sqrt(((Lplayerxpos-playerxpos)*(Lplayerxpos-playerxpos))+((Lplayerypos-playerypos)*(Lplayerypos-playerypos))+((Lplayerzpos-playerzpos)*(Lplayerzpos-playerzpos)))/worldtilesize;
-		Lplayerxpos=playerxpos;
-		Lplayerypos=playerypos;
-		Lplayerzpos=playerzpos;
+		elapseddist+=sqrt(((oldx-playerxpos)*(oldx-playerxpos))+((oldy-playerypos)*(oldy-playerypos))+((oldz-playerzpos)*(oldz-playerzpos)))/worldtilesize;
 	}
 
 
@@ -396,6 +401,7 @@ void TestApp::play(float gamespeed){
 	}
 	*/
 
-}
+
+
 
 }

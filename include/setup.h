@@ -14,6 +14,7 @@ const int target_offset=3;
 const int worldtilecount=max_number_tile;
 const float worldtilesize=10;
 const int streetlevel=2;
+const int walllength=2;
 int worldtileviewrange=50;
 float target_x=0,target_y=0,target_z=0;
 bool usejoystick=0;
@@ -25,8 +26,8 @@ bool showplayer=0;
 bool freecamera=0;
 bool autoexit=0;
 bool start_motion=0;
-bool allocentric=1;          
-
+bool allocentric=0;
+int judge_res=0;
 
 int a_win_pos[4],b_win_pos[4],c_win_pos[4],d_win_pos[4];
 int rand_sel;
@@ -103,7 +104,6 @@ float playerhight=5;
 int collectablesfound=0;
 
 float playerxpos,playerypos,playerzpos;
-float Lplayerxpos,Lplayerypos,Lplayerzpos;
 float playerxang,playeryang,playerzang;
 float playerxposmov,playeryposmov,playerzposmov;
 float playerxangmov,playeryangmov,playerzangmov;
@@ -120,7 +120,6 @@ float goalplayerframe;
 #include "gamespecific/genworldgrid.h"
 #include "gamespecific/genvisibleworld.h"
 #include "gamespecific/genminimap.h"
-#include "gamespecific/saveandload.h"
 
 void TestApp::setupmedia(){
 	
@@ -364,13 +363,13 @@ void TestApp::setupgame(){
 	bool newworld=0;
 	if(worldgrid[0][0][0][0]==99){
 		genworldgrid();
-		saveworldgrid();
+		//saveworldgrid();
 		newworld=1;
 	}
 
 	//setup the player, entities and other info
 	playerypos=-9001;
-	load();
+//	load();
 	if(playerypos==-9001 || newworld==1){
 		genentities();
 		usetextures=1;
@@ -409,10 +408,6 @@ void TestApp::setupgame(){
 		playerypos=(streetlevel-0.45)*worldtilesize;
 		playerzpos=(worldtilesize*worldgridsizex/2);
 
-		Lplayerxpos=playerxpos;
-		Lplayerypos=playerypos;
-		Lplayerzpos=playerzpos;
-
 		playerxang=0;
 		playeryang=0;
 		playerzang=0;
@@ -443,7 +438,7 @@ void TestApp::setupgame(){
 		camxangmov=0;
 		camyangmov=0;
 		camzangmov=0;
-		save();
+		//save();
 	}
 
 	//setup water

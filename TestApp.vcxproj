@@ -62,8 +62,8 @@
   <ItemGroup>
     <ClInclude Include="include\drawhud.h" />
     <ClInclude Include="include\drawworld.h" />
-    <ClInclude Include="include\gamespecific\tilenames.h" />
     <ClInclude Include="include\generic.h" />
+    <ClInclude Include="include\judgement.h" />
     <ClInclude Include="include\play.h" />
     <ClInclude Include="include\setup.h" />
     <ClInclude Include="include\testapp.h" />
@@ -83,7 +83,6 @@
     <ClInclude Include="include\gamespecific\genminimap.h" />
     <ClInclude Include="include\gamespecific\genvisibleworld.h" />
     <ClInclude Include="include\gamespecific\genworldgrid.h" />
-    <ClInclude Include="include\gamespecific\saveandload.h" />
     <ClInclude Include="include\gamespecific\ms3d\mathlib.h" />
     <ClInclude Include="include\gamespecific\ms3d\msModel.h" />
     <ClInclude Include="resource.h" />

@@ -27,6 +27,10 @@ void TestApp::drawhud(){
 			sprintf(temptext,"%s","Allocentric mode");
 			drawtext(x,y,(char*)temptext,1);y-=0.04;
 		}
+		else{
+			sprintf(temptext,"%s","Egocentric mode");
+			drawtext(x,y,(char*)temptext,1);y-=0.04;
+		}
 		//sprintf(temptext,"%s%d","joykey: ",temp);
 		//drawtext(x,y,(char*)temptext,1);y-=0.03;
 		sprintf(temptext,"%s%.2f","Elapsed time [sec]: ",elapsedtime);
@@ -74,6 +78,8 @@ void TestApp::drawhud(){
 			sprintf(temptext,"%s%.1f","Player height [ft]: ",playerhight);
 			drawtext(x,y,(char*)temptext,1);y-=0.03;
 		}
+		sprintf(temptext,"%s%d %d %d %d","Judgment: ",(judge_res&0x08)>0,(judge_res&0x04)>0,(judge_res&0x02)>0,(judge_res&0x01)>0);
+		drawtext(x,y,(char*)temptext,1);y-=0.03;
 		sprintf(temptext,"%s%s","Log file: ",logfilename);
 		drawtext(x,y,(char*)temptext,1);y-=0.03;
 		
@@ -221,6 +227,8 @@ void TestApp::drawhud(){
 			target_y=(a_win_pos[1]*worldtilesize)-4;
 			target_z=(a_win_pos[2]*worldtilesize);
 		}
+
+
 		if((target_x-target_offset<playerxpos)&&(target_x+target_offset>playerxpos)&&(target_y-target_offset<(playerypos))&&(target_y+target_offset>(playerypos))&&(target_z-target_offset<playerzpos)&&(target_z+target_offset>playerzpos)){
 			switch(lang){
 				case 1:   //English

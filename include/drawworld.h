@@ -1,6 +1,6 @@
 void TestApp::drawworld(){
 
-	float background_color[4]={0, 0.16, 0.35, 1};      // bakgournd sky color
+	float background_color[4]={0.4, 0.56, 0.75, 1};      // bakgournd sky color
 	glClearColor(background_color[0],background_color[1],background_color[2],background_color[3]);							//background color  
     glClearDepth(1000.0);
     glEnable(GL_DEPTH_TEST);
@@ -13,7 +13,7 @@ void TestApp::drawworld(){
 	glAlphaFunc(GL_GREATER,0.0f);
 
 
-	float fog_color[4]={0, 0.16, 0.35, 0.5};			  // fog color	
+	float fog_color[4]={0.3, 0.46, 0.65, 0.5};			  // fog color	
 	//turn on fog
 	GLfloat fogColor[4]= {fog_color[0],fog_color[1],fog_color[2],fog_color[3]};             //fog color
 	glFogi(GL_FOG_MODE,GL_LINEAR);
@@ -40,8 +40,9 @@ void TestApp::drawworld(){
 	glLightfv(GL_LIGHT0,GL_DIFFUSE,light_diffuse0);
 	glLightfv(GL_LIGHT0,GL_SPECULAR,light_specular0);
 	//glLightf(GL_LIGHT0,GL_LINEAR_ATTENUATION,0.5f/((float)worldtileviewrange+1.f));
-	glLightf(GL_LIGHT0,GL_LINEAR_ATTENUATION,0.01f);
+	//glLightf(GL_LIGHT0,GL_LINEAR_ATTENUATION,0.01f);
 
+	/*
 	glEnable(GL_LIGHT1);
 	GLfloat light_position1[] = {camxpos+500,camypos+250,camzpos+300,1.0};
 	GLfloat light_ambient1[] = {0.0,0.0,0.0,1.0};
@@ -52,7 +53,7 @@ void TestApp::drawworld(){
 	glLightfv(GL_LIGHT1,GL_DIFFUSE,light_diffuse1);
 	glLightfv(GL_LIGHT1,GL_SPECULAR,light_specular1);
 	glLightf(GL_LIGHT1,GL_LINEAR_ATTENUATION,0.005f);
-	
+	*/
 	
 
 	/*int viewport[4];
