@@ -163,8 +163,22 @@ void TestApp::play(float gamespeed){
 	judgment();
 
 	//Log file writer 
-	if(!start_motion)fprintf(pFile,"%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%.2f,%.2f,%1d,%c,%c,%.2f\n",playerxpos,playerypos,playerzpos,camxang,camyang,camzang,elapseddist,expectdist,judge_res,targ_char,pos_char,elapsedtime);
+	if(!start_motion)fprintf(pFile,"%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%.2f,%.2f,%1d,%d,%d,%.2f\n",playerxpos,playerypos,playerzpos,camxang,camyang,camzang,elapseddist,expectdist,judge_res,targ_char,pos_char,elapsedtime);
 
+	if(start_log){
+		start_log=0;
+		L_pos_char=pos_char;
+		fprintf(pFile_2,"This is the interpreted Log file for %s\n\n",logfilename);
+		fprintf(pFile_2,"_______________________________________________________________________________________________________________________\n");
+		fprintf(pFile_2,"Elapsed Distance | In No Room | Right Floor | Right Side | Right Direction | Target Room | Current Room | Elapsed Time \n");
+		fprintf(pFile_2,"_______________________________________________________________________________________________________________________\n");
+	}
+
+	if(L_pos_char!=pos_char){
+		if(!start_motion)fprintf(pFile_2,"      %2.2f      |     %1d      |      %1d      |     %1d      |        %1d        |      %c      |      %c       |    %2.2f\n",elapseddist,(judge_res>>3)&0x01,(judge_res>>2)&0x01,(judge_res>>1)&0x01,judge_res&0x01,targ_char,pos_char,elapsedtime);
+	}
+
+	L_pos_char=pos_char;
 	
 	if(playerjumping){
 		if(mpKey[FWInput::Channel_Key_Space]->getBoolValue() && playeryposmov>0.1){

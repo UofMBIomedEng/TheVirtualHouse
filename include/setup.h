@@ -6,7 +6,8 @@ struct InterleavedVertex{
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-char targ_char,pos_char;
+char targ_char,pos_char,L_pos_char;
+bool start_log=1,write_end=1;
 const bool usevbo=1;
 const bool usetileswhenrendering=1;
 

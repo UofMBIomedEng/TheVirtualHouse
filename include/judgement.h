@@ -129,8 +129,13 @@ char get_letter(int judge_num){
 void TestApp::judgment(){
 	
 	int room_judge=0,player_judge=0;
+
 	player_judge=zone(playerxpos,playerypos,playerzpos);
+	pos_char=get_letter(player_judge);
+
 	room_judge=zone(target_x,target_y,target_z);
+	targ_char=get_letter(room_judge);
+	
 	if(player_judge&0x10)
 		judge_res=0x08;				//player is not in any room 
 	else{

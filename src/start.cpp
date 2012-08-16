@@ -1,4 +1,5 @@
-const float version = 4.2;
+const float version = 4.4;
+
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,9 +12,6 @@ const float version = 4.2;
 #include <Windows.h>
 #include <MMSystem.h>
 #pragma comment(lib,"Winmm.lib")
-
-
-
 
 #include "testapp.h"
 
@@ -41,7 +39,6 @@ int countdownjoystickstart=0;
 
 char win_clue;
 
-
 float camxpos,camypos,camzpos;
 float camxang,camyang,camzang,tmpcamyang;
 float camxposmov,camyposmov,camzposmov;
@@ -60,13 +57,15 @@ int lang=1;   // 1=English 2=Spanish 3=French 4=German
 int control_buffer[4][max_latency];
 int latency_write_pointer=0;
 int latency_read_pointer=0;
-int stairtype=5;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 180degrees, 4=ramp at 90 degrees, 5=double stairs at 180degrees, 6= double ramps at 180degrees
+int stairtype=6;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 180degrees, 4=ramp at 90 degrees, 5=double stairs at 180degrees, 6= double ramps at 180degrees
 
 //int temp;
 
 const char mediadir[] = "Media/";
 char* logfilename="default.txt";
+char logfilename_2[100];
 FILE * pFile;
+FILE * pFile_2;
 
 
 #include "generic.h"
@@ -131,6 +130,8 @@ bool TestApp::onInit(int argc, char **ppArgv){
 			control_buffer[temp1][temp2]=0;
 
 	pFile = fopen (logfilename,"w");
+	sprintf(logfilename_2,"%s%s",logfilename,"_Int.txt");
+	pFile_2 = fopen ((char *)logfilename_2,"w");
 	srand(time(NULL));
 	
 	if(allocentric)
@@ -275,5 +276,6 @@ void TestApp::onSize(const FWDisplayInfo &dispInfo){
 void TestApp::onShutdown(){
 	unbindcontrols();
 	fclose (pFile);
-
+	fprintf(pFile_2,"_______________________________________________________________________________________________________________________\n");
+	fclose (pFile_2);
 }

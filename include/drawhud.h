@@ -80,7 +80,7 @@ void TestApp::drawhud(){
 		}
 		sprintf(temptext,"%s%d %d %d %d %c %c","Judgment: ",(judge_res&0x08)>0,(judge_res&0x04)>0,(judge_res&0x02)>0,(judge_res&0x01)>0,targ_char,pos_char);
 		drawtext(x,y,(char*)temptext,1);y-=0.03;
-		sprintf(temptext,"%s%s","Log file: ",logfilename);
+		sprintf(temptext,"%s%s,%s","Log files: ",logfilename,logfilename_2);
 		drawtext(x,y,(char*)temptext,1);y-=0.03;
 		
 	}
@@ -230,6 +230,11 @@ void TestApp::drawhud(){
 
 
 		if((target_x-target_offset<playerxpos)&&(target_x+target_offset>playerxpos)&&(target_y-target_offset<(playerypos))&&(target_y+target_offset>(playerypos))&&(target_z-target_offset<playerzpos)&&(target_z+target_offset>playerzpos)){
+			if(write_end){
+				write_end=0;
+				fprintf(pFile_2,"_______________________________________________________________________________________________________________________\n");
+				if(!start_motion)fprintf(pFile_2," Goal Accomplised with %2.2f meters traversing error and %2.2f seconds ellapsed time\n",elapseddist-expectdist,elapsedtime);
+			}
 			switch(lang){
 				case 1:   //English
 					sprintf(temptext,"%s","Good Job! You reached the Goal");
