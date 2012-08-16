@@ -176,6 +176,9 @@ void TestApp::play(float gamespeed){
 
 	if(L_pos_char!=pos_char){
 		if(!start_motion)fprintf(pFile_2,"      %2.2f      |     %1d      |      %1d      |     %1d      |        %1d        |      %c      |      %c       |    %2.2f\n",elapseddist,(judge_res>>3)&0x01,(judge_res>>2)&0x01,(judge_res>>1)&0x01,judge_res&0x01,targ_char,pos_char,elapsedtime);
+
+		if(!((judge_res>>3)&0x01))
+			if(!start_motion)fprintf(pFile_3,"%2d,%2d,%1d,%1d,%1d,%2.2f,%2.2f\n",targ_char,pos_char,(judge_res>>2)&0x01,(judge_res>>1)&0x01,judge_res&0x01,elapseddist,elapsedtime);
 	}
 
 	L_pos_char=pos_char;

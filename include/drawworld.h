@@ -27,10 +27,12 @@ void TestApp::drawworld(){
 		glEnable(GL_FOG);
 	}
 	
-
+	if(init_sky_flag){
+		init_sky_flag=0;
 	skybox = new SKYBOX();
 	if(showsky)
 		skybox->Initialize();
+	}
 
 	//skybox->Render();
 
@@ -234,8 +236,7 @@ void TestApp::drawworld(){
 	glDisableClientState(GL_VERTEX_ARRAY);
 	if(usetextures)glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 	glDisableClientState(GL_NORMAL_ARRAY);
-	if(showsky)
-		skybox->Finalize();
+	
 	if(usetextures)glDisable(GL_TEXTURE_2D);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_LIGHT0);

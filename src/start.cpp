@@ -1,5 +1,4 @@
-const float version = 4.4;
-
+const float version = 4.5;
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -35,6 +34,7 @@ double starttime=0;
 double start_time=0;
 double motion_time=0;
 bool starttimeflag=1;
+bool init_sky_flag=1;
 int countdownjoystickstart=0;
 
 char win_clue;
@@ -63,9 +63,11 @@ int stairtype=6;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 1
 
 const char mediadir[] = "Media/";
 char* logfilename="default.txt";
+char* total_logfilename="total.txt";
 char logfilename_2[100];
 FILE * pFile;
 FILE * pFile_2;
+FILE * pFile_3;
 
 
 #include "generic.h"
@@ -115,6 +117,7 @@ bool TestApp::onInit(int argc, char **ppArgv){
 		if(!strcmp(ppArgv[i],"/SHOWSKY")) showsky=1;
 		if(!strcmp(ppArgv[i],"/ANIMSOUND")) animal_background_sound=1;
 		if(!strcmp(ppArgv[i],"/PERPSTAIR")) stairtype=atoi(ppArgv[i+1]);
+		if(!strcmp(ppArgv[i],"/LOGTOTAL")) total_logfilename=ppArgv[i+1];
     }
 
 	ShowCursor(0);  // added to hide the mouse cursor
@@ -132,8 +135,13 @@ bool TestApp::onInit(int argc, char **ppArgv){
 	pFile = fopen (logfilename,"w");
 	sprintf(logfilename_2,"%s%s",logfilename,"_Int.txt");
 	pFile_2 = fopen ((char *)logfilename_2,"w");
-	srand(time(NULL));
 	
+	if(trial==1)
+		pFile_3 = fopen ((char *)total_logfilename,"w");		//open a new total file
+	else if(trial>1)
+		pFile_3 = fopen ((char *)total_logfilename,"a");		//append to the existing total file
+	
+	srand(time(NULL));
 	if(allocentric)
 		targetwin=(int)(trial-1)%3;
 	else
@@ -278,4 +286,7 @@ void TestApp::onShutdown(){
 	fclose (pFile);
 	fprintf(pFile_2,"_______________________________________________________________________________________________________________________\n");
 	fclose (pFile_2);
+	fclose (pFile_3);
+	if(showsky)
+		skybox->Finalize();
 }
