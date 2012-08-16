@@ -157,7 +157,12 @@ void TestApp::drawhud(){
 				case 1:
 					switch(lang){
 						case 1:   //English
-							sprintf(temptext,"%s%d%s","Trial number ",trial,": Go to the window with the X");
+							if(trial<4)
+							sprintf(temptext,"%s%d%s","Trial number ",trial,": Go to the window with the X with the Joystick");
+							else
+							{
+								sprintf(temptext,"%s%d%s","Trial number ",trial,": Go to the window with the X with the Wheelchair");
+							}
 							break;
 						case 2:   //French
 							sprintf(temptext,"%s%d%s","Numero d'essai ",trial,": Allez a la fenetre avec le X");
@@ -188,6 +193,9 @@ void TestApp::drawhud(){
 				break;
 			}
 		}
+		
+
+
 		//This stuff draws the clue letter
 		drawtext(x,y,(char*)temptext,2);y-=0.07;
 		sprintf(temptext,"%c",win_clue);
