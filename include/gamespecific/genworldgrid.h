@@ -161,42 +161,26 @@ void genworldgrid(){
 		c_win_pos[2]=house_low_z+(2)*(house_high_z-house_low_z)/4;
 		//6
 
-		if(kidmode){
-			worldgrid[a_win_pos[0]][a_win_pos[1]][a_win_pos[2]][0]=kittenwall_tile; 	
-			worldgrid[b_win_pos[0]][b_win_pos[1]][b_win_pos[2]][0]=puppywall_tile; 
-			worldgrid[c_win_pos[0]][c_win_pos[1]][c_win_pos[2]][0]=cowwall_tile;
-		}
-		else
-		{
+		
+		
 			worldgrid[a_win_pos[0]][a_win_pos[1]][a_win_pos[2]][0]=circle_window_tile; 	
 			worldgrid[b_win_pos[0]][b_win_pos[1]][b_win_pos[2]][0]=X_window_tile; 
 			worldgrid[c_win_pos[0]][c_win_pos[1]][c_win_pos[2]][0]=triangle_window_tile;
-		}
-		switch(((trial-1)%3)+1){
-			case 1:
-				//climb the stairs
-				expectdist += 6;
-				//for the clue chart resembles letter W
-				win_clue=87;
-			break;
-			case 2:
+		
+		
+			
+				
 				//climb the stairs
 				expectdist += 12;
 				//for the clue chart resembles letter F
 				win_clue=70;
-			break;
-			case 3:
-				//climb the stairs
-				expectdist += 13;
-				//for the clue chart resembles letter H
-				win_clue=72;
-			break;
-		}	
+		
 	}
+	/*
 	else{
 		//objective windows
 		switch(trial){
-			case 1:
+			default :
 
 				//climb the stairs
 				expectdist += 2.6;
@@ -461,14 +445,15 @@ void genworldgrid(){
 						break;
 			}
 		}
+		
 	}
-
+	*/
 	//building door
-	worldgrid[house_high_x-3-(rand()%(house_high_x-house_low_x-6))][streetlevel][house_low_z+1][0]=door_tile;
-	worldgrid[house_high_x-3-(rand()%(house_high_x-house_low_x-6))][streetlevel][house_high_z-1][0]=door_tile;
-	int entrydoorz=house_high_z-3-(rand()%(house_high_z-house_low_z-6));
+	worldgrid[24][streetlevel][house_low_z+1][0]=door_tile;
+	worldgrid[24][streetlevel][house_high_z-1][0]=door_tile;
+	int entrydoorz=24;
 	worldgrid[house_low_x+1][streetlevel][entrydoorz][0]=door_tile;
-	worldgrid[house_high_x-1][streetlevel][house_high_z-3-(rand()%(house_high_z-house_low_z-6))][0]=door_tile;
+	worldgrid[house_high_x-1][streetlevel][24][0]=door_tile;
 
 	//calculated the expected distance
 	//to the entrance door
@@ -486,7 +471,7 @@ void genworldgrid(){
 				worldgrid[x][streetlevel+y][z][0]=hardwood_tile;
 
 	switch(stairtype){
-	case 1:
+	default :
 
 	//stairs at 180 degrees
 		worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)][0]=stairs_tile;
@@ -509,247 +494,7 @@ void genworldgrid(){
 	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
 
 	
-	//isolators
-	/*
-	worldgrid[24][streetlevel][26][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel][26][1]=1;
-	worldgrid[25][streetlevel][23][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel][23][1]=3;
-
-	worldgrid[25][streetlevel+1][26][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+1][26][1]=1;
-	worldgrid[26][streetlevel+1][26][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+1][26][1]=1;
-	worldgrid[24][streetlevel+1][23][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+1][23][1]=3;
-	worldgrid[23][streetlevel+1][23][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+1][23][1]=3;
 	
-	worldgrid[23][streetlevel+2][26][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+2][26][1]=1;
-	worldgrid[26][streetlevel+2][23][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+2][23][1]=3;
-	worldgrid[27][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][24][1]=2;
-	worldgrid[27][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][25][1]=2;
-	worldgrid[25][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+2][24][1]=0;
-	worldgrid[25][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+2][25][1]=0;
-
-	worldgrid[24][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+2][24][1]=2;
-	worldgrid[24][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+2][25][1]=2;
-	worldgrid[22][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][24][1]=0;
-	worldgrid[22][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][25][1]=0;
-	break;
-	*/
-	case 2:
-	//stairs at 90 degrees (floor not fixed for this configuration)
-	//holes in floor
-	//second floor floor
-	worldgrid[25][streetlevel+1][24][0]=empty_tile;//top of stairs...
-	worldgrid[25][streetlevel+1][25][0]=empty_tile;
-	worldgrid[24][streetlevel+1][24][0]=empty_tile;
-	worldgrid[24][streetlevel+1][25][0]=empty_tile;//...
-	worldgrid[26][streetlevel+1][23][0]=empty_tile;//bottom of stairs...
-	worldgrid[27][streetlevel+1][23][0]=empty_tile;
-	worldgrid[23][streetlevel+1][26][0]=empty_tile;
-	worldgrid[22][streetlevel+1][26][0]=empty_tile;//...
-	//3rd floor floor
-	worldgrid[26][streetlevel+2][23][0]=empty_tile;
-	worldgrid[27][streetlevel+2][23][0]=empty_tile;
-	worldgrid[23][streetlevel+2][26][0]=empty_tile;
-	worldgrid[22][streetlevel+2][26][0]=empty_tile;
-	//isolators
-	/*
-	//first floor covering stairs
-	worldgrid[24][streetlevel][26][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel][26][1]=1;
-	worldgrid[25][streetlevel][23][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel][23][1]=3;
-	//second floor covering stairs
-	worldgrid[25][streetlevel+1][26][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+1][26][1]=1;
-	worldgrid[26][streetlevel+1][25][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+1][25][1]=2;
-	worldgrid[26][streetlevel+1][24][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+1][24][1]=2;
-	worldgrid[24][streetlevel+1][23][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+1][23][1]=3;
-	worldgrid[23][streetlevel+1][24][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+1][24][1]=0;
-	worldgrid[23][streetlevel+1][25][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+1][25][1]=0;
-	//3rd floor covering stairs
-	worldgrid[25][streetlevel+2][23][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+2][23][1]=0;
-	worldgrid[26][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+2][24][1]=1;
-	worldgrid[26][streetlevel+2][22][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+2][22][1]=3;
-	worldgrid[27][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][24][1]=1;
-	worldgrid[27][streetlevel+2][22][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][22][1]=3;
-
-	worldgrid[24][streetlevel+2][26][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+2][26][1]=2;
-	worldgrid[22][streetlevel+2][27][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][27][1]=1;
-	worldgrid[22][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][25][1]=3;
-	worldgrid[23][streetlevel+2][27][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+2][27][1]=1;
-	worldgrid[23][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+2][25][1]=3;
-	*/
-
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][0]=stairs_tile;//first floor up
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)][0]=0;//bottom of first floor stairs
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][1]=2;//first floor up rotation
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel][house_low_z+((house_high_z-house_low_z)/2)][0]=stairs_tile;//first floor up
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;//bottom of first floor stairs
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)-1][0]=stairs_tile;//second floor up//was plus 1 z
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)-1][1]=1;//was2;//second floor up rotation
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+2][0]=stairs_tile;//second floor up//was plus 1 z
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+2][1]=3;//was2;//second floor up rotation
-	break;
-	case 3:
-
-	//stairs at 180 degrees
-		worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)][0]=ramp_tile;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+2][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+2][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel][house_low_z+((house_high_z-house_low_z)/2)][0]=ramp_tile;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+1][0]=ramp_tile;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+1][1]=2;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+2][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+2][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][0]=ramp_tile;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][1]=2;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)][0]=0;
-
-	
-	//isolators
-	
-	worldgrid[24][streetlevel][26][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel][26][1]=1;
-	worldgrid[25][streetlevel][23][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel][23][1]=3;
-
-	worldgrid[25][streetlevel+1][26][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+1][26][1]=1;
-	worldgrid[26][streetlevel+1][26][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+1][26][1]=1;
-	worldgrid[24][streetlevel+1][23][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+1][23][1]=3;
-	worldgrid[23][streetlevel+1][23][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+1][23][1]=3;
-	
-	worldgrid[23][streetlevel+2][26][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+2][26][1]=1;
-	worldgrid[26][streetlevel+2][23][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+2][23][1]=3;
-	worldgrid[27][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][24][1]=2;
-	worldgrid[27][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][25][1]=2;
-	worldgrid[25][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+2][24][1]=0;
-	worldgrid[25][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+2][25][1]=0;
-
-	worldgrid[24][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+2][24][1]=2;
-	worldgrid[24][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+2][25][1]=2;
-	worldgrid[22][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][24][1]=0;
-	worldgrid[22][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][25][1]=0;
-
-	break;
-	
-	case 4:
-	//stairs at 90 degrees (floor not fixed for this configuration)
-	//holes in floor
-	//second floor floor
-	worldgrid[25][streetlevel+1][24][0]=empty_tile;//top of stairs...
-	worldgrid[25][streetlevel+1][25][0]=empty_tile;
-	worldgrid[24][streetlevel+1][24][0]=empty_tile;
-	worldgrid[24][streetlevel+1][25][0]=empty_tile;//...
-	worldgrid[26][streetlevel+1][23][0]=empty_tile;//bottom of stairs...
-	worldgrid[27][streetlevel+1][23][0]=empty_tile;
-	worldgrid[23][streetlevel+1][26][0]=empty_tile;
-	worldgrid[22][streetlevel+1][26][0]=empty_tile;//...
-	//3rd floor floor
-	worldgrid[26][streetlevel+2][23][0]=empty_tile;
-	worldgrid[27][streetlevel+2][23][0]=empty_tile;
-	worldgrid[23][streetlevel+2][26][0]=empty_tile;
-	worldgrid[22][streetlevel+2][26][0]=empty_tile;
-	//isolators
-	//first floor covering stairs
-	worldgrid[24][streetlevel][26][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel][26][1]=1;
-	worldgrid[25][streetlevel][23][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel][23][1]=3;
-	//second floor covering stairs
-	worldgrid[25][streetlevel+1][26][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+1][26][1]=1;
-	worldgrid[26][streetlevel+1][25][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+1][25][1]=2;
-	worldgrid[26][streetlevel+1][24][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+1][24][1]=2;
-	worldgrid[24][streetlevel+1][23][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+1][23][1]=3;
-	worldgrid[23][streetlevel+1][24][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+1][24][1]=0;
-	worldgrid[23][streetlevel+1][25][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+1][25][1]=0;
-	//3rd floor covering stairs
-	worldgrid[25][streetlevel+2][23][0]=stairs_isolator_tile;
-	worldgrid[25][streetlevel+2][23][1]=0;
-	worldgrid[26][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+2][24][1]=1;
-	worldgrid[26][streetlevel+2][22][0]=stairs_isolator_tile;
-	worldgrid[26][streetlevel+2][22][1]=3;
-	worldgrid[27][streetlevel+2][24][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][24][1]=1;
-	worldgrid[27][streetlevel+2][22][0]=stairs_isolator_tile;
-	worldgrid[27][streetlevel+2][22][1]=3;
-
-	worldgrid[24][streetlevel+2][26][0]=stairs_isolator_tile;
-	worldgrid[24][streetlevel+2][26][1]=2;
-	worldgrid[22][streetlevel+2][27][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][27][1]=1;
-	worldgrid[22][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[22][streetlevel+2][25][1]=3;
-	worldgrid[23][streetlevel+2][27][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+2][27][1]=1;
-	worldgrid[23][streetlevel+2][25][0]=stairs_isolator_tile;
-	worldgrid[23][streetlevel+2][25][1]=3;
-
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][0]=ramp_tile;//first floor up
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)][0]=0;//bottom of first floor stairs
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+1][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][1]=2;//first floor up rotation
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel][house_low_z+((house_high_z-house_low_z)/2)][0]=ramp_tile;//first floor up
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)][streetlevel][house_low_z+((house_high_z-house_low_z)/2)+1][0]=0;//bottom of first floor stairs
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)-1][0]=ramp_tile;//second floor up//was plus 1 z
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)+2][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)-1][1]=1;//was2;//second floor up rotation
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+2][0]=ramp_tile;//second floor up//was plus 1 z
-	worldgrid[house_low_x+((house_high_x-house_low_x)/2)-1][streetlevel+1][house_low_z+((house_high_z-house_low_z)/2)+2][1]=3;//was2;//second floor up rotation
 	break;
 	}
 	//roof
@@ -763,19 +508,7 @@ void genworldgrid(){
 		worldgrid[house_high_x-2][streetlevel+2][house_high_z-1][0]=atmmachinewall_tile;
 	}
 
-	//block the edges of the world
-	/*
-	for(int x=0; x<worldgridsizex; x++)
-	for(int y=0; y<streetlevel; y++)
-	for(int z=0; z<worldgridsizez; z++)
-	if(x==0 || x==worldgridsizex-1
-	|| y==0 || y==worldgridsizey-1
-	|| z==0 || z==worldgridsizez-1){
-		worldgrid[x][y][z][0]=7;
-		worldgrid[x][y][z][1]=0;
-
-	}
-	*/
+	
 
 	
 

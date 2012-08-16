@@ -41,4 +41,5 @@
     macros created for all objects
     unnecessary objects removed
     90 degree stairs option added
-    
+3.4 special release: allo/ego options removed, 3 trials with joystick and 3 with wheelchair.
+    Major traversing distance bug removed

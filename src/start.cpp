@@ -1,4 +1,4 @@
-const float version = 3.3;
+const float version = 3.4;
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -46,7 +46,7 @@ float camxangmov,camyangmov,camzangmov;
 int trial=1;
 int latency=1;
 int sound_delay=10;
-bool kidmode=1;
+bool kidmode=0;
 bool animal_background_sound=0;
 float JoyAngVel=2.36;
 float JoyTransVel=0.1;
@@ -57,7 +57,7 @@ int lang=1;   // 1=English 2=Spanish 3=French 4=German
 int control_buffer[4][max_latency];
 int latency_write_pointer=0;
 int latency_read_pointer=0;
-int stairtype=3;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 180degrees, 4=ramp at 90 degrees
+int stairtype=1;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 180degrees, 4=ramp at 90 degrees
 
 //int temp;
 
@@ -125,9 +125,11 @@ bool TestApp::onInit(int argc, char **ppArgv){
 	srand(time(NULL));
 	
 	if(allocentric)
-		targetwin=(trial-1)%3;
+		targetwin=1;
+	/*
 	else
 		targetwin=rand()%3;
+		*/
 	FWGLApplication::onInit(argc, ppArgv);
 	glEnable(GL_DEPTH_TEST);
 	
