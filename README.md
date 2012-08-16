@@ -1,2 +1,1 @@
-TheVirtualHouse
-===============
+The Virtual House project, University of Manitoba Biomedical Engineering Department
