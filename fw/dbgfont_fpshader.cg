@@ -1,0 +1,23 @@
+/*   SCE CONFIDENTIAL                                       */
+/*   PLAYSTATION(R)3 Programmer Tool Runtime Library 192.001 */
+/*   Copyright (C) 2006 Sony Computer Entertainment Inc.    */
+/*   All Rights Reserved.                                   */
+
+void main
+(
+	float2 texcoord	: TEXCOORD0,
+	float4 color : COLOR,
+
+	uniform sampler2D texture,
+
+	out float4 oColor : COLOR
+)
+{
+	float4 tex = tex2D(texture, texcoord);
+	if (tex.a <= 0.5) {
+		oColor = float4(0.0, 0.0, 0.0, 0.0);
+	}
+	else {
+		oColor = color;
+	}
+}

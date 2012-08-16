@@ -1,0 +1,55 @@
+
+# target filenames
+TARGET	:= testapp-linux
+
+# source filenames
+SRCS	:= src/testapp.cpp
+
+OBJS_DIR := objs-linux
+
+# Framework directory
+FRAMEWORK_DIR := ..
+
+# C compiler flags
+CFLAGS := -Iinclude -I$(FRAMEWORK_DIR)/include -I$(FRAMEWORK_DIR)/include/psgl -I$(CELL_SDK)/target/common/include/vectormath -Wall -Wno-unknown-pragmas -Wno-format -g -D_DEBUG -DCELL_DISPLAY_MODE=DisplayMode_$(CELL_DISPLAY_MODE)
+
+# C++ compiler flags
+CXXFLAGS := $(CFLAGS) -fno-exceptions -nostdinc++ -fno-rtti -Wno-ctor-dtor-privacy
+
+# Platform compiler flags
+PLATFORM_CFLAGS := 
+PLATFORM_LIBS := -lCgGL -lCg -lGLU -lGL -lpthread
+
+# compiler
+CC := gcc
+
+CPP_OBJS := $(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
+OBJS := $(patsubst %.c, $(OBJS_DIR)/%.o, $(CPP_OBJS))
+
+LIBS= -L$(FRAMEWORK_DIR) -lfw-linux $(PLATFORM_LIBS)
+
+FW_LIB = libfw
+
+# rules
+
+all: $(TARGET)
+
+clean: 
+	rm -f $(TARGET) $(OBJS)
+
+$(TARGET): $(OBJS) $(FW_LIB)
+	$(CC) $(CFLAGS) $(LDFLAGS) $(OBJS) $(LIBS)  -o $@
+
+$(OBJS_DIR)/%.o: %.c
+	@mkdir -p $(dir $(@))
+	$(CC) $(PLATFORM_CFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(dir $(@))
+	$(CC) $(PLATFORM_CFLAGS) $(CXXFLAGS) -c $< -o $@
+
+.PHONY: clean
+
+.PHONY: libfw
+libfw:
+	make -C .. -f Makefile-linux

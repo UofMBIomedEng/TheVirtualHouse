@@ -1,0 +1,47 @@
+=== worldtiles ===
+00 - empty
+01 - metro edge
+02 - metro middle
+03 - metro bench
+04 - metro empty
+05 - metro sidewalk stairs
+06 - metro thick stairs
+07 - block
+08 - sidewalk
+09 - sidewalk corner
+10 - street
+11 - street hole
+12 - sewer wall
+13 - sewer middle
+14 - sewer hole
+15 - catacomb tunnel
+16 - catacomb 4 pillars
+17 - catacomb door
+18 - catacomb empty
+19 - catacomb wall
+20 - water floor
+21 - sewer/catacomb door
+22 - catacomb stairs
+23 - building corner
+24 - building wall
+25 - building window
+26 - building door
+27 - building center
+28 - sewer corner 1
+29 - sewer corner 2e
+30 - metro tunnel wall
+31 - metro station wall
+32 - elevator bottom
+33 - elevator middle
+34 - elevator top
+35 - water floor wall
+36 - skywalk to building
+37 - skywalk
+38 - water floor corner
+39 - sidewalk no sides
+40 - building stairs to roof
+41 - sign
+42 - sign
+43 - sign
+44 - sign
+45 - sign (roof top billboard)

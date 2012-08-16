@@ -1,0 +1,31 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Framework", "Framework.vcxproj", "{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		PS3Debug|Win32 = PS3Debug|Win32
+		PS3Release|Win32 = PS3Release|Win32
+		PS3SNCDebug|Win32 = PS3SNCDebug|Win32
+		PS3SNCRelease|Win32 = PS3SNCRelease|Win32
+		Win32Debug|Win32 = Win32Debug|Win32
+		Win32Release|Win32 = Win32Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3Debug|Win32.ActiveCfg = PS3Debug|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3Debug|Win32.Build.0 = PS3Debug|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3Release|Win32.ActiveCfg = PS3Release|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3Release|Win32.Build.0 = PS3Release|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3SNCDebug|Win32.ActiveCfg = PS3SNCDebug|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3SNCDebug|Win32.Build.0 = PS3SNCDebug|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3SNCRelease|Win32.ActiveCfg = PS3SNCRelease|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.PS3SNCRelease|Win32.Build.0 = PS3SNCRelease|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.Win32Debug|Win32.ActiveCfg = Win32Debug|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.Win32Debug|Win32.Build.0 = Win32Debug|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.Win32Release|Win32.ActiveCfg = Win32Release|Win32
+		{2EC13638-539A-4EE8-A6E3-102DCD5B67EB}.Win32Release|Win32.Build.0 = Win32Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

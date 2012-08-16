@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6a96647f-19a9-4ac9-8b65-b07872fa5187}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;cc;s;asm</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{c02abb8b-6b13-4ca3-b7f7-7f7e36c4c3a2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Generic">
+      <UniqueIdentifier>{2822cedb-9ef5-4745-81db-9554c0df64d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Specific">
+      <UniqueIdentifier>{fc8ca709-9a7f-4618-835d-560685cd5fbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Game Specific\ms3d">
+      <UniqueIdentifier>{2f755461-ab68-49a1-a2ff-afcef592a758}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="include\gamespecific\ms3d\mathlib.cpp">
+      <Filter>Header Files\Game Specific\ms3d</Filter>
+    </ClCompile>
+    <ClCompile Include="include\gamespecific\ms3d\msModel.cpp">
+      <Filter>Header Files\Game Specific\ms3d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\start.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="include\sky\skybox.cpp">
+      <Filter>Header Files\Generic</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\drawhud.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\drawworld.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\play.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\setup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\testapp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\3DMath.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\buttons.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\camera.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\drawprimatives.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\genericmath.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\loadbmp.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\loadobj.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\loadtga.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\quaternions.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\savescreenshot.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\spherebumpmesh.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\generic\text.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gamespecific\entities.h">
+      <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gamespecific\genminimap.h">
+      <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gamespecific\genvisibleworld.h">
+      <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gamespecific\genworldgrid.h">
+      <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gamespecific\ms3d\mathlib.h">
+      <Filter>Header Files\Game Specific\ms3d</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gamespecific\ms3d\msModel.h">
+      <Filter>Header Files\Game Specific\ms3d</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="include\judgement.h">
+      <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sky\skybox.h">
+      <Filter>Header Files\Generic</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VirtualWorld.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon1.ico" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,17 @@
+/*   SCE CONFIDENTIAL                                       */
+/*   PLAYSTATION(R)3 Programmer Tool Runtime Library 192.001 */
+/*   Copyright (C) 2006 Sony Computer Entertainment Inc.    */
+/*   All Rights Reserved.                                   */
+
+void main
+(
+	float4 position	: POSITION,
+	float4 color	: COLOR0,
+
+	out float4 oPosition : POSITION,
+	out float4 v2f_color
+)
+{
+	oPosition = position;
+	v2f_color = color;
+}

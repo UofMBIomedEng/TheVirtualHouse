@@ -1,0 +1,268 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{6e3479c1-94a3-4667-ad06-45f3648e3b6c}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;cc;s;asm</Extensions>
+    </Filter>
+    <Filter Include="Source Files\Cell_Source">
+      <UniqueIdentifier>{daeb755d-92dc-4d0e-b6bb-d9e1d7e5cde2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Win32_Source">
+      <UniqueIdentifier>{bb752d7b-aa0f-48b4-b74f-0465d987c3f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Linux_Source">
+      <UniqueIdentifier>{e7a88837-3d88-419d-8d97-30b52af867f1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\PSGL_Source">
+      <UniqueIdentifier>{4115adc7-23e0-407d-80d5-cc9ab223a452}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{1ce4185d-e6e9-4710-bf5b-e0f1bc237680}</UniqueIdentifier>
+      <Extensions>h;hpp;vsm</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Cell_Source">
+      <UniqueIdentifier>{a13c0375-a679-44a4-8ea1-7a35b3c8426b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Win32_Source">
+      <UniqueIdentifier>{7364ccde-ac2c-4009-ba1b-0d65813053b2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Linux_Source">
+      <UniqueIdentifier>{6716d288-4f98-43a8-83b7-9d268aa72019}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\FWApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWCamera.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWDebugConsole.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWDebugFont.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWDebugFontRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWDisplayInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWInput.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWNullApplication.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWNullDebugFontRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWNullWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FWWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cell\FWCellGLWindow.cpp">
+      <Filter>Source Files\Cell_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cell\FWCellInput.cpp">
+      <Filter>Source Files\Cell_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cell\FWCellMain.cpp">
+      <Filter>Source Files\Cell_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cell\FWCellSystemCallback.cpp">
+      <Filter>Source Files\Cell_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\cell\FWCellTime.cpp">
+      <Filter>Source Files\Cell_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win32\FWWin32GLExtensions.cpp">
+      <Filter>Source Files\Win32_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win32\FWWin32GLWindow.cpp">
+      <Filter>Source Files\Win32_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win32\FWWin32Input.cpp">
+      <Filter>Source Files\Win32_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win32\FWWin32Main.cpp">
+      <Filter>Source Files\Win32_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win32\FWWin32Time.cpp">
+      <Filter>Source Files\Win32_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\linux\FWLinuxGLExtensions.cpp">
+      <Filter>Source Files\Linux_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\linux\FWLinuxGLWindow.cpp">
+      <Filter>Source Files\Linux_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\linux\FWLinuxInput.cpp">
+      <Filter>Source Files\Linux_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\linux\FWLinuxMain.cpp">
+      <Filter>Source Files\Linux_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\linux\FWLinuxTime.cpp">
+      <Filter>Source Files\Linux_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psgl\FWGLApplication.cpp">
+      <Filter>Source Files\PSGL_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psgl\FWGLCamApplication.cpp">
+      <Filter>Source Files\PSGL_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psgl\FWGLCamControlApplication.cpp">
+      <Filter>Source Files\PSGL_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psgl\FWGLDebugFontRenderer.cpp">
+      <Filter>Source Files\PSGL_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psgl\FWGLExtensions.cpp">
+      <Filter>Source Files\PSGL_Source</Filter>
+    </ClCompile>
+    <ClCompile Include="src\psgl\FWGLGrid.cpp">
+      <Filter>Source Files\PSGL_Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\FWApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWCamera.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWDebug.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWDebugConsole.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWDebugFont.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWDebugFontData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWDebugFontRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWDisplayInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLCamApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLCamControlApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLDebugFontRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLExtensions.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLGrid.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWGLInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWInput.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWInputAsciiLookup.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWInputChannels.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWMath.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWNullApplication.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWNullDebugFontRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWNullWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWPSGLDisplayInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWPSGLInclude.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWStartupInfo.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWTime.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\FWWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\FWWin32Debug.h">
+      <Filter>Header Files\Win32_Source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\FWWin32DisplayInfo.h">
+      <Filter>Header Files\Win32_Source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\FWWin32GLInclude.h">
+      <Filter>Header Files\Win32_Source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\FWWin32GLWindow.h">
+      <Filter>Header Files\Win32_Source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\FWWin32Input.h">
+      <Filter>Header Files\Win32_Source</Filter>
+    </ClInclude>
+    <ClInclude Include="include\win32\FWWin32Time.h">
+      <Filter>Header Files\Win32_Source</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="include\cell\FWCellDebug.h">
+      <Filter>Header Files\Cell_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\cell\FWCellGLWindow.h">
+      <Filter>Header Files\Cell_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\cell\FWCellInput.h">
+      <Filter>Header Files\Cell_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\cell\FWCellTime.h">
+      <Filter>Header Files\Cell_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxDebug.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxGLDisplayInfo.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxGLInclude.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxGLWindow.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxInput.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxTime.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+    <CustomBuildStep Include="include\linux\FWLinuxXInfo.h">
+      <Filter>Header Files\Linux_Source</Filter>
+    </CustomBuildStep>
+  </ItemGroup>
+</Project>

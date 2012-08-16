@@ -1,0 +1,423 @@
+<?xml version="1.0" encoding="shift_jis"?>
+<VisualStudioProject
+	ProjectType="Visual C++"
+	Version="7.10"
+	Name="fwgcm"
+	ProjectGUID="{A4D63F3A-579F-4436-9D28-CE72006BB919}">
+	<Platforms>
+		<Platform
+			Name="Win32"/>
+	</Platforms>
+	<Configurations>
+		<Configuration
+			Name="PS3 Debug|Win32"
+			OutputDirectory="PS3_PPU_Debug"
+			IntermediateDirectory="PS3_PPU_Debug"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-fno-rtti --param large-function-growth=800"
+				AdditionalIncludeDirectories="../gcm/common;include/gcm;include;&quot;$(SCE_PS3_ROOT)\target\ppu\include\vectormath\cpp&quot;;&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SCE_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SCE_PS3_ROOT)\target\common\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS3;TARGET_PS3;_DEBUG;__GCC__"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(ProjectDir)libfwgcm.a"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS3 Release|Win32"
+			OutputDirectory="PS3_PPU_Release"
+			IntermediateDirectory="PS3_PPU_Release"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-fno-rtti --param large-function-growth=800"
+				AdditionalIncludeDirectories="../gcm/common;include/gcm;include;&quot;$(SCE_PS3_ROOT)\target\ppu\include\vectormath\cpp&quot;;&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SCE_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SCE_PS3_ROOT)\target\common\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS3;TARGET_PS3;NDEBUG;__GCC__"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(ProjectDir)libfwgcm.a"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS3 SNC Debug|Win32"
+			OutputDirectory="PS3_SNC_PPU_Debug"
+			IntermediateDirectory="PS3_SNC_PPU_Debug"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-g -O0 -Xaltivec --multibyte_chars"
+				AdditionalIncludeDirectories="../../fw/include;../common;&quot;$(SCE_PS3_ROOT)\target\ppu\include\vectormath\cpp&quot;;&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SN_PS3_PATH)\ppu\include&quot;;&quot;$(SN_PS3_PATH)\common\include\sn&quot;;&quot;$(SN_PS3_PATH)\common\include&quot;;&quot;$(SN_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SN_PS3_ROOT)\target\common\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS3;TARGET_PS3;_DEBUG;__SNC__"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(ProjectDir)fwgcm.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+		<Configuration
+			Name="PS3 SNC Release|Win32"
+			OutputDirectory="PS3_SNC_PPU_Release"
+			IntermediateDirectory="PS3_SNC_PPU_Release"
+			ConfigurationType="4"
+			DeleteExtensionsOnClean="*.obj;*.d;*.map;*.lst;*.pch;$(TargetPath)">
+			<Tool
+				Name="VCCLCompilerTool"
+				AdditionalOptions="-O3 -Xaltivec"
+				AdditionalIncludeDirectories="../../fw/include;../common;&quot;$(SCE_PS3_ROOT)\target\ppu\include\vectormath\cpp&quot;;&quot;$(SN_PS3_PATH)\ppu\include\sn&quot;;&quot;$(SN_PS3_PATH)\ppu\include&quot;;&quot;$(SN_PS3_PATH)\common\include\sn&quot;;&quot;$(SN_PS3_PATH)\common\include&quot;;&quot;$(SN_PS3_ROOT)\target\ppu\include&quot;;&quot;$(SN_PS3_ROOT)\target\common\include&quot;"
+				PreprocessorDefinitions="SN_TARGET_PS3;TARGET_PS3;NDEBUG;__SNC__"
+				ProgramDataBaseFileName=""
+				CompileAs="0"/>
+			<Tool
+				Name="VCCustomBuildTool"/>
+			<Tool
+				Name="VCLibrarianTool"
+				AdditionalOptions=""
+				OutputFile="$(ProjectDir)fwgcm.lib"/>
+			<Tool
+				Name="VCMIDLTool"/>
+			<Tool
+				Name="VCPostBuildEventTool"/>
+			<Tool
+				Name="VCPreBuildEventTool"/>
+			<Tool
+				Name="VCPreLinkEventTool"/>
+			<Tool
+				Name="VCResourceCompilerTool"/>
+			<Tool
+				Name="VCWebServiceProxyGeneratorTool"/>
+			<Tool
+				Name="VCXMLDataGeneratorTool"/>
+			<Tool
+				Name="VCManagedWrapperGeneratorTool"/>
+			<Tool
+				Name="VCAuxiliaryManagedWrapperGeneratorTool"/>
+		</Configuration>
+	</Configurations>
+	<References>
+	</References>
+	<Files>
+		<Filter
+			Name="Source Files"
+			Filter="cpp;c;cxx;cc;s;asm">
+			<File
+				RelativePath=".\src\FWApplication.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWCamera.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\FWCellGCMWindow.cpp">
+			</File>
+			<File
+				RelativePath=".\src\cell\FWCellInput.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\FWCellMain.cpp">
+			</File>
+			<File
+				RelativePath=".\src\cell\FWCellSystemCallback.cpp">
+			</File>
+			<File
+				RelativePath=".\src\cell\FWCellTime.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWDebugConsole.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWDebugFont.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWDebugFontRenderer.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWDisplayInfo.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\FWGCMApplication.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\FWGCMCamApplication.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\FWGCMCamControlApplication.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\FWGCMDebugFontRenderer.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWInput.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWNullApplication.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWNullDebugFontRenderer.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWNullWindow.cpp">
+			</File>
+			<File
+				RelativePath=".\src\FWWindow.cpp">
+			</File>
+			<File
+				RelativePath=".\src\gcm\memory.cpp">
+			</File>
+		</Filter>
+		<Filter
+			Name="Header Files"
+			Filter="h;hpp">
+			<File
+				RelativePath=".\include\gcm\FWCellGCMWindow.h">
+			</File>
+			<File
+				RelativePath=".\include\gcm\FWGCMApplication.h">
+			</File>
+			<File
+				RelativePath=".\include\gcm\FWGCMCamApplication.h">
+			</File>
+			<File
+				RelativePath=".\include\gcm\FWGCMCamControlApplication.h">
+			</File>
+			<File
+				RelativePath=".\include\gcm\FWGCMConfiguration.h">
+			</File>
+			<File
+				RelativePath=".\include\gcm\FWGCMDebugFontRenderer.h">
+			</File>
+			<File
+				RelativePath=".\include\gcm\gcmutil.h">
+			</File>
+		</Filter>
+		<Filter
+			Name="Cg Files"
+			Filter="">
+			<File
+				RelativePath=".\clear_fpshader.cg">
+				<FileConfiguration
+					Name="PS3 Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\clear_vpshader.cg">
+				<FileConfiguration
+					Name="PS3 Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\dbgfont_fpshader.cg">
+				<FileConfiguration
+					Name="PS3 Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_fp_rsx -o &quot;$(InputName).fpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).fpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).fpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+			</File>
+			<File
+				RelativePath=".\dbgfont_vpshader.cg">
+				<FileConfiguration
+					Name="PS3 Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Debug|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+				<FileConfiguration
+					Name="PS3 SNC Release|Win32">
+					<Tool
+						Name="VCCustomBuildTool"
+						CommandLine="$(SCE_PS3_ROOT)\host-win32\Cg\bin\sce-cgc -quiet -profile sce_vp_rsx -o &quot;$(InputName).vpo&quot; &quot;$(InputPath)&quot;
+$(SCE_PS3_ROOT)\host-win32\ppu\bin\ppu-lv2-objcopy  -I binary -O elf64-powerpc-celloslv2 -B powerpc &quot;$(InputName).vpo&quot; &quot;$(InputName).ppu.o&quot;
+"
+						Outputs="&quot;$(InputName).vpo&quot;;&quot;$(InputName).ppu.o&quot;"/>
+				</FileConfiguration>
+			</File>
+		</Filter>
+	</Files>
+	<Globals>
+	</Globals>
+</VisualStudioProject>

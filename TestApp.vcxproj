@@ -1,0 +1,99 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Win32Release|Win32">
+      <Configuration>Win32Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{022608D0-A90C-4A1B-A77E-61BE9C0A2425}</ProjectGuid>
+    <RootNamespace>TestApp</RootNamespace>
+    <ProjectName>VirtualHouse</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>false</UseOfMfc>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+    <Import Project="$(VCTargetsPath)Microsoft.CPP.UpgradeFromVC71.props" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'">Win32Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'">Win32Release\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>include\sky;lib\;lib\include;include;../include;C:\usr\local\cell\target\common\include\vectormath\;$(SCE_PS3_ROOT)\target\common\include\vectormath\;C:\Program Files\Microsoft DirectX SDK (November 2008)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WIN32;Win32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <MultiProcessorCompilation>true</MultiProcessorCompilation>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>fw/Framework.lib;include/sky/GLaux.lib;opengl32.lib;glu32.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)VirtualHouse.exe</OutputFile>
+      <AdditionalLibraryDirectories>Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="include\sky\skybox.cpp" />
+    <ClCompile Include="src\start.cpp" />
+    <ClCompile Include="include\gamespecific\ms3d\mathlib.cpp" />
+    <ClCompile Include="include\gamespecific\ms3d\msModel.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\drawhud.h" />
+    <ClInclude Include="include\drawworld.h" />
+    <ClInclude Include="include\generic.h" />
+    <ClInclude Include="include\judgement.h" />
+    <ClInclude Include="include\play.h" />
+    <ClInclude Include="include\setup.h" />
+    <ClInclude Include="include\sky\skybox.h" />
+    <ClInclude Include="include\testapp.h" />
+    <ClInclude Include="include\generic\3DMath.h" />
+    <ClInclude Include="include\generic\buttons.h" />
+    <ClInclude Include="include\generic\camera.h" />
+    <ClInclude Include="include\generic\drawprimatives.h" />
+    <ClInclude Include="include\generic\genericmath.h" />
+    <ClInclude Include="include\generic\loadbmp.h" />
+    <ClInclude Include="include\generic\loadobj.h" />
+    <ClInclude Include="include\generic\loadtga.h" />
+    <ClInclude Include="include\generic\quaternions.h" />
+    <ClInclude Include="include\generic\savescreenshot.h" />
+    <ClInclude Include="include\generic\spherebumpmesh.h" />
+    <ClInclude Include="include\generic\text.h" />
+    <ClInclude Include="include\gamespecific\entities.h" />
+    <ClInclude Include="include\gamespecific\genminimap.h" />
+    <ClInclude Include="include\gamespecific\genvisibleworld.h" />
+    <ClInclude Include="include\gamespecific\genworldgrid.h" />
+    <ClInclude Include="include\gamespecific\ms3d\mathlib.h" />
+    <ClInclude Include="include\gamespecific\ms3d\msModel.h" />
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="VirtualWorld.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="icon1.ico" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

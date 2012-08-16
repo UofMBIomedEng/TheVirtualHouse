@@ -1,0 +1,49 @@
+
+# target filenames
+TARGET	:= libfw-linux.a
+
+OBJS_DIR := objs-linux
+
+# source filenames
+SRCS := src/FWApplication.cpp src/FWCamera.cpp src/FWDebugConsole.cpp \
+	src/FWDebugFont.cpp src/FWDebugFontRenderer.cpp src/FWDisplayInfo.cpp \
+	src/psgl/FWGLApplication.cpp src/psgl/FWGLCamApplication.cpp src/psgl/FWGLCamControlApplication.cpp \
+	src/psgl/FWGLDebugFontRenderer.cpp src/psgl/FWGLExtensions.cpp src/psgl/FWGLGrid.cpp src/FWInput.cpp \
+	src/FWNullApplication.cpp src/FWNullWindow.cpp src/FWNullDebugFontRenderer.cpp src/FWWindow.cpp \
+	src/linux/FWLinuxGLExtensions.cpp src/linux/FWLinuxInput.cpp src/linux/FWLinuxMain.cpp \
+	src/linux/FWLinuxTime.cpp src/linux/FWLinuxGLWindow.cpp
+
+# C compiler flags
+CFLAGS := -Iinclude -Iinclude/psgl -I$(CELL_SDK)/target/common/include/vectormath -Wall -Wno-unknown-pragmas -Wno-format -O0 -g -D_DEBUG -DCELL_DISPLAY_MODE=DisplayMode_$(CELL_DISPLAY_MODE)
+# C++ compiler flags
+CXXFLAGS := $(CFLAGS) -fno-exceptions -nostdinc++ -Wno-ctor-dtor-privacy
+# Platform compiler flags
+PLATFORM_CFLAGS := 
+
+# compiler
+CC := gcc
+AR := ar
+
+#defines
+CPP_OBJS := $(patsubst %.cpp, $(OBJS_DIR)/%.o, $(SRCS))
+OBJS := $(patsubst %.c, $(OBJS_DIR)/%.o, $(CPP_OBJS))
+
+# rules
+
+all: $(TARGET)
+
+clean: 
+	rm -f $(TARGET) $(OBJS)
+
+$(TARGET): $(OBJS)
+	$(AR) rus $@ $(OBJS)
+
+$(OBJS_DIR)/%.o: %.c
+	@mkdir -p $(dir $(@))
+	$(CC) $(PLATFORM_CFLAGS) $(CFLAGS) -c $< -o $@
+
+$(OBJS_DIR)/%.o: %.cpp
+	@mkdir -p $(dir $(@))
+	$(CC) $(PLATFORM_CFLAGS) $(CXXFLAGS) -c $< -o $@
+
+.PHONY: clean

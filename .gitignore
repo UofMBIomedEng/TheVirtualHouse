@@ -71,3 +71,6 @@ packages/
 
 #Test files
 *.testsettings
+
+#3ds max files
+3D max/
