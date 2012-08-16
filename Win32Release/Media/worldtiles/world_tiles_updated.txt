@@ -2,75 +2,18 @@ World Tiles - Updated
 ---------------------
 ---------------------
 00 - empty
-01 - metro edge with pillar
-02 - metro middle with pillar
-03 - metro two benches
-04 - metro empty (floor and ceiling)
-05 - metro sidewalk entrance and stairs
-06 - metro thick stairs
-07 - block
 08 - sidewalk
 09 - sidewalk corner
-10 - Carpet
-11 - manhole
-12 - sewer wall
-13 - sewer middle (floor and ceiling)
-14 - sewer hole
-15 - catacomb tunnel
-16 - catacomb 4 pillars
-17 - catacomb door
-18 - catacomb empty (floor and ceiling)
-19 - catacomb wall
-20 - water floor
-21 - sewer/catacomb door
-22 - catacomb stairs
-23 - building corner
-24 - building wall
-25 - building window
-26 - building door
-27 - building center
-28 - sewer corner 1
-29 - sewer corner 2e
-30 - metro tunnel wall
-31 - metro station wall
-32 - elevator bottom
-33 - elevator middle
-34 - elevator top
-35 - water floor wall
-36 - skywalk to building
-37 - skywalk
-38 - water floor corner
-39 - sidewalk no sides
-40 - building stairs to roof
-41 - sign
-42 - sign
-43 - sign
-44 - sign
-45 - billboard
-46 - billboard
-47 - billboard
-48 - billboard
-49 - billboard
-50 - billboard
-51 - billboard
-52 - billboard
-53 - Brick Cube
-54 - Stairs
-55 - Stairs
-56 - Exit sign
-57 - Engineering building
-58 - Tim Hortons (Cashier)
-59 - Tim Hortons (Cup)
-60 - CIBC (logo)
-61 - CIBC (ATM)
-62 - CIBC (large icon)
 63 - Grass
 64 - Hardwood Floor
+65 - Circle Window
+66 - X Window
+68 - Triangle Window
 69 - Window
 70 - Door
 71 - Wall (Corner)
 72 - Wall
-73 - Stairs (with sign) --in use
+73 - Stairs (with sign)
 74 - Roof
 75 - Base of stairs (isolator)
 76 - Tim Hortons Wall - in use

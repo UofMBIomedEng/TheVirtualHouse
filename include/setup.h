@@ -11,7 +11,7 @@ const bool usevbo=1;
 const bool usetileswhenrendering=1;
 
 const int target_offset=3;
-const int worldtilecount=81;
+const int worldtilecount=max_number_tile;
 const float worldtilesize=10;
 const int streetlevel=2;
 int worldtileviewrange=50;
@@ -25,7 +25,7 @@ bool showplayer=0;
 bool freecamera=0;
 bool autoexit=0;
 bool start_motion=0;
-bool allocentric=0;          
+bool allocentric=1;          
 
 
 int a_win_pos[4],b_win_pos[4],c_win_pos[4],d_win_pos[4];
@@ -96,7 +96,7 @@ GLuint watertexture;*/
 
 int gameworldpolygons=0;
 
-bool usetextures=0;
+bool usetextures=1;
 bool ghostmode=0;
 float playerhight=5;
 
@@ -116,6 +116,7 @@ float playerframe;
 float lastplayerframe;
 float goalplayerframe;
 
+//#include "gamespecific/tilenames.h"
 #include "gamespecific/genworldgrid.h"
 #include "gamespecific/genvisibleworld.h"
 #include "gamespecific/genminimap.h"
@@ -131,6 +132,7 @@ void TestApp::setupmedia(){
 		//get the file name
 		sprintf(filename,"%s%s%i%s",mediadir,"worldtiles/",a,".obj");
 		//load the file
+		
 		loadobj((char*)filename,
 			worldtilevertexarray[a][0],
 			worldtiletexturearray[a],
@@ -148,6 +150,7 @@ void TestApp::setupmedia(){
 				worldtilevertexarray[a][b][c*3+1] = tempposy;
 				worldtilevertexarray[a][b][c*3+2] = tempposz*cos(angle)-tempposx*sin(angle);
 			}
+	
 		}
 		//set normals for the alternate rotation
 		for(int b=1; b<4; b++){
@@ -215,8 +218,10 @@ void TestApp::setupmedia(){
 	if(usetileswhenrendering){
 		for(int a=1; a<worldtilecount; a++){
 			sprintf(filename,"%s%s%i%s",mediadir,"worldtiles/",a,".bmp");
+			
 			worldtiletexture[a]=loadbmp((char*)filename,1);
 		}
+		
 	}
 
 	//load world tile texture
@@ -368,7 +373,7 @@ void TestApp::setupgame(){
 	load();
 	if(playerypos==-9001 || newworld==1){
 		genentities();
-		usetextures=0;
+		usetextures=1;
 		ghostmode=0;
 		collectablesfound=0;
 

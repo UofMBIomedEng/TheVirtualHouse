@@ -43,6 +43,9 @@ GLuint loadbmp(char* filename,bool mipmap){
 
 	fp = fopen(filename,"r");
 
+	if(fp==NULL)    //ahmad
+		return NULL;     //ahmad
+
 	fread(&Type,sizeof(unsigned short),1,fp);
 	fread(&Size,sizeof(unsigned long),1,fp);
 	fread(&Reserved1,sizeof(unsigned short),1,fp);

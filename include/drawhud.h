@@ -188,6 +188,7 @@ void TestApp::drawhud(){
 				break;
 			}
 		}
+		//This stuff draws the clue letter
 		drawtext(x,y,(char*)temptext,2);y-=0.07;
 		sprintf(temptext,"%c",win_clue);
 		drawtext(x,y,(char*)temptext,2);

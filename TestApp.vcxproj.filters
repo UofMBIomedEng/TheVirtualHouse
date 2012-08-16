@@ -28,9 +28,6 @@
     <ClCompile Include="src\start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="include\sky\skybox.cpp">
-      <Filter>Header Files\Generic</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\drawhud.h">
@@ -99,6 +96,9 @@
     <ClInclude Include="include\gamespecific\genworldgrid.h">
       <Filter>Header Files\Game Specific</Filter>
     </ClInclude>
+    <ClInclude Include="include\gamespecific\saveandload.h">
+      <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
     <ClInclude Include="include\gamespecific\ms3d\mathlib.h">
       <Filter>Header Files\Game Specific\ms3d</Filter>
     </ClInclude>
@@ -106,11 +106,8 @@
       <Filter>Header Files\Game Specific\ms3d</Filter>
     </ClInclude>
     <ClInclude Include="resource.h" />
-    <ClInclude Include="include\judgement.h">
+    <ClInclude Include="include\gamespecific\tilenames.h">
       <Filter>Header Files\Game Specific</Filter>
-    </ClInclude>
-    <ClInclude Include="include\sky\skybox.h">
-      <Filter>Header Files\Generic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

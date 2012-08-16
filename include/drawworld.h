@@ -84,8 +84,8 @@ void TestApp::drawworld(){
 					if(a>0){
 					//	if(usetextures)glBindTexture(GL_TEXTURE_2D,worldtiletexture[a]);  //original code
 		//This is if statement is for textures
-						
-						if(usetextures||a==10||a>=45){												//added
+					
+						if(usetextures){												//added
 							glEnable(GL_TEXTURE_2D);
 							glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 							glBindTexture(GL_TEXTURE_2D,worldtiletexture[a]);

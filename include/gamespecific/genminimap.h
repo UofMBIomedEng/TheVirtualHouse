@@ -30,8 +30,7 @@ GLuint genminimap(){
 		texturedata[zoffset+xoffset+2] = (GLubyte) 130;
 		//sidewalk
 		if(worldgrid[x][streetlevel][z][0]==8
-		|| worldgrid[x][streetlevel][z][0]==9
-		|| worldgrid[x][streetlevel][z][0]==39){
+		|| worldgrid[x][streetlevel][z][0]==9){
 			texturedata[zoffset+xoffset+0] = (GLubyte) 50;
 			texturedata[zoffset+xoffset+1] = (GLubyte) 50;
 			texturedata[zoffset+xoffset+2] = (GLubyte) 50;
