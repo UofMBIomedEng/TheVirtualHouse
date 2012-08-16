@@ -6,25 +6,33 @@ void TestApp::drawworld(){
     glEnable(GL_DEPTH_TEST);
 	glDepthFunc(GL_LESS);
 	glShadeModel(GL_SMOOTH);
+	
 	glEnable(GL_CULL_FACE);
 	glCullFace(GL_BACK);
 	glFrontFace(GL_CCW);
 	glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 	glAlphaFunc(GL_GREATER,0.0f);
+	
 
+	if(!showsky){
+		float fog_color[4]={0.3, 0.46, 0.65, 0.5};			  // fog color	
+		//turn on fog
+		GLfloat fogColor[4]= {fog_color[0],fog_color[1],fog_color[2],fog_color[3]};             //fog color
+		glFogi(GL_FOG_MODE,GL_LINEAR);
+		glFogfv(GL_FOG_COLOR,fogColor);
+		glFogf(GL_FOG_DENSITY,0.25f);
+		glHint(GL_FOG_HINT,GL_DONT_CARE);
+		glFogf(GL_FOG_START,0.1f);
+		glFogf(GL_FOG_END,worldtilesize*(worldtileviewrange+20));
+		glEnable(GL_FOG);
+	}
+	
 
-	float fog_color[4]={0.3, 0.46, 0.65, 0.5};			  // fog color	
-	//turn on fog
-	GLfloat fogColor[4]= {fog_color[0],fog_color[1],fog_color[2],fog_color[3]};             //fog color
-	glFogi(GL_FOG_MODE,GL_LINEAR);
-	glFogfv(GL_FOG_COLOR,fogColor);
-	glFogf(GL_FOG_DENSITY,0.25f);
-	glHint(GL_FOG_HINT,GL_DONT_CARE);
-	glFogf(GL_FOG_START,0.1f);
-	glFogf(GL_FOG_END,worldtilesize*(worldtileviewrange+20));
-	glEnable(GL_FOG);
+	skybox = new SKYBOX();
+	if(showsky)
+		skybox->Initialize();
 
-
+	//skybox->Render();
 
 	//prep for drawing
 	glEnable(GL_LIGHTING);
@@ -71,9 +79,13 @@ void TestApp::drawworld(){
 	glEnableClientState(GL_VERTEX_ARRAY);
 	if(usetextures)glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 	glEnableClientState(GL_NORMAL_ARRAY);
-
+	if(showsky)	
+		skybox->Render(camyang*degreesinradian,camxang*degreesinradian);
+//	skybox->Render(0,0);
 	//draw world
 	if(usetileswhenrendering){
+	//	glRotatef( camxang, 1.0f, 0.0f, 0.0f );
+	//	glRotatef( camyang, 0.0f, 1.0f, 0.0f );	
 		gameworldpolygons=0;
 		for(int x=highint(0,playerxgridpos-worldtileviewrange); x<lowint(worldgridsizex,playerxgridpos+worldtileviewrange+1); x++)
 			for(int y=highint(0,playerygridpos-worldtileviewrange); y<lowint(worldgridsizey,playerygridpos+worldtileviewrange+1); y++)
@@ -90,6 +102,7 @@ void TestApp::drawworld(){
 							glEnable(GL_TEXTURE_2D);
 							glEnableClientState(GL_TEXTURE_COORD_ARRAY);
 							glBindTexture(GL_TEXTURE_2D,worldtiletexture[a]);
+							
 						}																	//added
 						
 						glPushMatrix();
@@ -221,6 +234,8 @@ void TestApp::drawworld(){
 	glDisableClientState(GL_VERTEX_ARRAY);
 	if(usetextures)glDisableClientState(GL_TEXTURE_COORD_ARRAY);
 	glDisableClientState(GL_NORMAL_ARRAY);
+	if(showsky)
+		skybox->Finalize();
 	if(usetextures)glDisable(GL_TEXTURE_2D);
 	glDisable(GL_LIGHTING);
 	glDisable(GL_LIGHT0);

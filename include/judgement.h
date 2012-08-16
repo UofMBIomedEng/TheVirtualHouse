@@ -70,6 +70,62 @@ int TestApp::zone(float px, float py, float pz){
 	}
 	return 0x10;			//this means that the the player is not in any room 
 }
+
+char get_letter(int judge_num){
+    switch(judge_num&0x1F){
+    case 0x10:
+        return '-';
+        break;
+    case 0x00:
+        return 'M';
+        break;
+    case 0x01:
+        return 'O';
+        break;
+    case 0x02:
+        return 'P';
+        break;
+    case 0x03:
+        return 'R';
+        break;
+    case 0x04:
+        return 'V';
+        break;
+    case 0x05:
+        return 'X';
+        break;
+    case 0x06:
+        return 'S';
+        break;
+    case 0x07:
+        return 'U';
+        break;
+    case 0x08:
+        return 'A';
+        break;
+    case 0x09:
+        return 'C';
+        break;
+    case 0x0A:
+        return 'D';
+        break;
+    case 0x0B:
+        return 'F';
+        break;
+    case 0x0C:
+        return 'J';
+        break;
+    case 0x0D:
+        return 'L';
+        break;
+    case 0x0E:
+        return 'G';
+        break;
+    case 0x0F:
+        return 'I';
+        break;
+    }
+}
 void TestApp::judgment(){
 	
 	int room_judge=0,player_judge=0;

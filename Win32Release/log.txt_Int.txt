@@ -1,0 +1,5 @@
+This is the interpreted Log file for log.txt
+
+_______________________________________________________________________________________________________________________
+Elapsed Distance | In No Room | Right Floor | Right Side | Right Direction | Target Room | Current Room | Elapsed Time 
+_______________________________________________________________________________________________________________________

@@ -28,6 +28,9 @@
     <ClCompile Include="src\start.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="include\sky\skybox.cpp">
+      <Filter>Header Files\Generic</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\drawhud.h">
@@ -105,6 +108,9 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="include\judgement.h">
       <Filter>Header Files\Game Specific</Filter>
+    </ClInclude>
+    <ClInclude Include="include\sky\skybox.h">
+      <Filter>Header Files\Generic</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

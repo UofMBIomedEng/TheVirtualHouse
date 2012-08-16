@@ -163,8 +163,8 @@ void TestApp::play(float gamespeed){
 	judgment();
 
 	//Log file writer 
-	if(!start_motion)fprintf(pFile,"%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%.2f,%.2f,%1d,%.2f\n",playerxpos,playerypos,playerzpos,camxang,camyang,camzang,elapseddist,expectdist,judge_res,elapsedtime);
-	//here, can add what was wrong and how many times it was wrong, ie floor, wall, side
+	if(!start_motion)fprintf(pFile,"%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%3.4f,%.2f,%.2f,%1d,%c,%c,%.2f\n",playerxpos,playerypos,playerzpos,camxang,camyang,camzang,elapseddist,expectdist,judge_res,targ_char,pos_char,elapsedtime);
+
 	
 	if(playerjumping){
 		if(mpKey[FWInput::Channel_Key_Space]->getBoolValue() && playeryposmov>0.1){
@@ -280,7 +280,7 @@ void TestApp::play(float gamespeed){
 		if((playerxpos>164)&&(playerxpos<324)&&(playerzpos>164)&&(playerzpos<324))			//wheelchair wiggling effect of the grass
 			latswing=0;
 		else
-			latswing=0.01*sin(swingtime);
+			latswing=0.005*sin(swingtime);
 	}
 	//turn player
 	playeryang=turntoangle(

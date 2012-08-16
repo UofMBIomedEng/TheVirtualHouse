@@ -38,4 +38,6 @@
 #define roof_tile2			96//check,text
 #define block_tile			7
 #define fence_tile			97
-#define fence_corner_tile	98
+
+#define double_ramp_tile	99
+#define double_stairs_tile	98

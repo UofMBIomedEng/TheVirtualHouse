@@ -32,3 +32,35 @@
 
 3.1 X and Z translation velocity difference fixed
     Door tile (70) modified to soft edges
+3.2 wrapping issues fixed
+    gap at top of stairs fixed
+    sidewalk gaps fixed
+    soft top of stairs fixed
+3.3 engine modified to not require 0-81 objects
+    max objects = 100 instead of 81
+    macros created for all objects
+    unnecessary objects removed
+    90 degree stairs option added
+4.0
+    House made larger
+    Rooms added
+    walls added inside rooms to obstruct visibility
+    grass wrap updated
+    wobbling effect only exists outside house
+    gamespeed put into effect
+    save and load functions removed
+    traversed distance error fixed
+    double execution of play removed
+    judgement engine added
+    	judgment added to log file
+    fog increased to make horizon more realistic
+    !!expected distances calculated (and are accurate) ONLY for ramps at 90degrees!!
+    environment's brightness increased
+    
+4.2
+    advanced mode added;sky, sun (light source) and fence
+    double stairs/ramps added
+4.3
+    judgement updated
+4.4
+    new log file added; records which room was entered when

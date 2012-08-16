@@ -1,4 +1,4 @@
-const float version = 4.0;
+const float version = 4.2;
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,6 +11,8 @@ const float version = 4.0;
 #include <Windows.h>
 #include <MMSystem.h>
 #pragma comment(lib,"Winmm.lib")
+
+
 
 
 #include "testapp.h"
@@ -39,6 +41,7 @@ int countdownjoystickstart=0;
 
 char win_clue;
 
+
 float camxpos,camypos,camzpos;
 float camxang,camyang,camzang,tmpcamyang;
 float camxposmov,camyposmov,camzposmov;
@@ -57,7 +60,7 @@ int lang=1;   // 1=English 2=Spanish 3=French 4=German
 int control_buffer[4][max_latency];
 int latency_write_pointer=0;
 int latency_read_pointer=0;
-int stairtype=4;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 180degrees, 4=ramp at 90 degrees
+int stairtype=5;   //1=stairs at 180degrees, 2=stairs at 90 degrees, 3=ramp at 180degrees, 4=ramp at 90 degrees, 5=double stairs at 180degrees, 6= double ramps at 180degrees
 
 //int temp;
 
@@ -110,6 +113,7 @@ bool TestApp::onInit(int argc, char **ppArgv){
 		if(!strcmp(ppArgv[i],"/JOYTRANSVEL")) JoyTransVel*=atof(ppArgv[i+1]);
 		if(!strcmp(ppArgv[i],"/LANGUAGE")) lang*=atoi(ppArgv[i+1]);
 		if(!strcmp(ppArgv[i],"/KIDMODE")) kidmode=1;
+		if(!strcmp(ppArgv[i],"/SHOWSKY")) showsky=1;
 		if(!strcmp(ppArgv[i],"/ANIMSOUND")) animal_background_sound=1;
 		if(!strcmp(ppArgv[i],"/PERPSTAIR")) stairtype=atoi(ppArgv[i+1]);
     }

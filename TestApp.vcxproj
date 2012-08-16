@@ -37,13 +37,13 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Win32Release|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>lib\;lib\include;include;../include;C:\usr\local\cell\target\common\include\vectormath\;$(SCE_PS3_ROOT)\target\common\include\vectormath\;C:\Program Files\Microsoft DirectX SDK (November 2008)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>include\sky;lib\;lib\include;include;../include;C:\usr\local\cell\target\common\include\vectormath\;$(SCE_PS3_ROOT)\target\common\include\vectormath\;C:\Program Files\Microsoft DirectX SDK (November 2008)\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>_WIN32;Win32;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>fw/Framework.lib;opengl32.lib;glu32.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>fw/Framework.lib;include/sky/GLaux.lib;opengl32.lib;glu32.lib;dinput8.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <OutputFile>$(OutDir)VirtualHouse.exe</OutputFile>
       <AdditionalLibraryDirectories>Lib\x86;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <SubSystem>Windows</SubSystem>
@@ -52,9 +52,11 @@
       </DataExecutionPrevention>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="include\sky\skybox.cpp" />
     <ClCompile Include="src\start.cpp" />
     <ClCompile Include="include\gamespecific\ms3d\mathlib.cpp" />
     <ClCompile Include="include\gamespecific\ms3d\msModel.cpp" />
@@ -66,6 +68,7 @@
     <ClInclude Include="include\judgement.h" />
     <ClInclude Include="include\play.h" />
     <ClInclude Include="include\setup.h" />
+    <ClInclude Include="include\sky\skybox.h" />
     <ClInclude Include="include\testapp.h" />
     <ClInclude Include="include\generic\3DMath.h" />
     <ClInclude Include="include\generic\buttons.h" />

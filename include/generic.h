@@ -4,12 +4,15 @@
 #include "generic/loadtga.h"
 #include "generic/loadobj.h"
 #include "generic/loadms3d.h"
+#include "sky/skybox.h"
 #include "generic/quaternions.h"
 #include "generic/savescreenshot.h"
 #include "generic/spherebumpmesh.h"
 #include "generic/camera.h"
 #include "generic/text.h"
 #include "generic/buttons.h"
+
+SKYBOX * skybox; 
 
 void TestApp::bindcontrols(){
 	//keyboard

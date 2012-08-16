@@ -78,7 +78,7 @@ void TestApp::drawhud(){
 			sprintf(temptext,"%s%.1f","Player height [ft]: ",playerhight);
 			drawtext(x,y,(char*)temptext,1);y-=0.03;
 		}
-		sprintf(temptext,"%s%d %d %d %d","Judgment: ",(judge_res&0x08)>0,(judge_res&0x04)>0,(judge_res&0x02)>0,(judge_res&0x01)>0);
+		sprintf(temptext,"%s%d %d %d %d %c %c","Judgment: ",(judge_res&0x08)>0,(judge_res&0x04)>0,(judge_res&0x02)>0,(judge_res&0x01)>0,targ_char,pos_char);
 		drawtext(x,y,(char*)temptext,1);y-=0.03;
 		sprintf(temptext,"%s%s","Log file: ",logfilename);
 		drawtext(x,y,(char*)temptext,1);y-=0.03;

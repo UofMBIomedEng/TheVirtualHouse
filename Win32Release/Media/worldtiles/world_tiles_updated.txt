@@ -2,6 +2,7 @@ World Tiles - Updated
 ---------------------
 ---------------------
 00 - empty
+07 - block tile
 08 - sidewalk
 09 - sidewalk corner
 63 - Grass
@@ -14,10 +15,25 @@ World Tiles - Updated
 71 - Wall (Corner)
 72 - Wall
 73 - Stairs (with sign)
-74 - Roof
+74 - Roof (pyramid shaped)
 75 - Base of stairs (isolator)
 76 - Tim Hortons Wall - in use
 77 - ATM wall - in use
 78 - Kitten
 79 - Puppy
 80 - Cow
+81 - ramp
+82 - second floor ramp (90 degree mode)
+83 - second floor stairs (90 degree mode)
+85 - double door tile (left)
+86 - double door tile (right)
+88 - interior wallcorner tile (left)
+89 - interior wallcorner tile (right)
+90 - double window tile
+91 - interior/exterior wallcorner tile (right)
+92 - interior/exterior wallcorner tile (left)
+95 - double door tile
+96 - roof tile (box shaped)
+97 - fence tile
+98 - double ramp tile
+99 - double stairs tile

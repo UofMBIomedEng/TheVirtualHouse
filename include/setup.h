@@ -6,7 +6,7 @@ struct InterleavedVertex{
 
 #define BUFFER_OFFSET(i) ((char *)NULL + (i))
 
-
+char targ_char,pos_char;
 const bool usevbo=1;
 const bool usetileswhenrendering=1;
 
@@ -21,6 +21,7 @@ bool usejoystick=0;
 bool calibjoy=1;
 bool sound=1;
 bool showinfo=1;
+bool showsky=0;
 bool testmode=0;
 bool showplayer=0;
 bool freecamera=0;
